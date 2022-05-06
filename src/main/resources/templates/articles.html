@@ -249,7 +249,28 @@ background-color: black ;
     
 	</div>
 	
-	
+	<div class="container">
+	<br>
+	<hr>
+			<div class="card-body">
+				<h4 class="card-title">Ajouter un article (XML)</h4>
+				<p class="card-text">
+				<form th:action="@{/rss22/insert}" method="POST">
+					<div class="input-group">
+
+						<div class="form-floating">
+							<textarea class="form-control"
+								placeholder="Entrez votre article XML" th:name="xmlInput"
+								id="floatingTextarea2" style="width: 1150px; height: 100px"></textarea>
+						</div>
+						<input type="submit" class="btn btn-info" value="Ajouter" />
+					</div>
+				</form>
+				
+
+			</div>
+</div>
+		
 	
 	
 		

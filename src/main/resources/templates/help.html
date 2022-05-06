@@ -146,50 +146,78 @@ background-color: black ;
             </li>
         </ul>
     </nav>
-<fieldset>
-			<legend>Opérations disponibles :</legend>
+    		<fieldset>
+    <br>
+    <hr>
+			<h1>Opérations disponibles :</h1>
+			<hr>
 			<ul>
 			<li>
-				<h4>URL: https://hakim.cleverapps.io/</h4>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/">https://hakimyouvarss22.cleverapps.io/</a></h5>
 				Méthode: GET	<br>
 				Résumé: Renvoie la page d'acceuil du projet en format HTML
 			</li>
 			<br>
 			<hr>
 			<br>
-			
 			<li>
-				<h4>URL: https://hakim.cleverapps.io/help	</h4>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/help">https://hakimyouvarss22.cleverapps.io/help</a>	</h5>
 				Méthode: GET	<br>
 				Résumé: Renvoie une page listant toute les opérations disponibles en format HTML
 			</li>
 			<br>
 			<hr>
-			
 			<br>
-			
-			
 			<li>
-				<h4>URL: https://hakim.cleverapps.io/rss22/resume/xml	</h4>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/rss22/resume/xml">https://hakimyouvarss22.cleverapps.io/rss22/resume/xml</a>	</h5>
 				Méthode: GET	<br>
 				Résumé: Affiche la liste des articles stockés en format XML.
 			</li>
 			<br>
 			<hr>
-			
 			<br>
-			
-			
 			<li>
-				<h4>URL: https://hakim.cleverapps.io/rss22/resume/html</h4>
+				<h5> URL: <a href="https://hakimyouvarss22.cleverapps.io/rss22/resume/html">https://hakimyouvarss22.cleverapps.io/rss22/resume/html</a></h5>
 				Méthode: GET	<br>
 				Résumé: Affiche la liste des articles stockés en format HTML.
 			</li>
 			<br>
 			<hr>
 			<br>
-			
+			<li>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/rss22/resume/xml/{guid}">https://hakimyouvarss22.cleverapps.io/rss22/resume/xml/{guid}</a></h5>
+				Méthode: GET	<br>
+				Résumé: Affiche l'article complet dont l'identifiant est {guid} au format XML
+			</li>
+			<br>
+			<hr>
+			<br>
+			<li>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/rss22/resume/html/{guid}">https://hakimyouvarss22.cleverapps.io/rss22/resume/html/{guid}</a></h5>
+				Méthode: GET	<br>
+				Résumé: Affiche l'article complet dont l'identifiant est {guid} au format HTML
+			</li>
+			<br>
+			<hr>
+			<br>
+			<li>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/rss22/insert">https://hakimyouvarss22.cleverapps.io/rss22/insert</a></h5>
+				Méthode: POST	<br>
+				Résumé: Ajoute le flux rss22 décrit, Si le flux est déjà présent, une erreur est retournée. Sinon il est ajouté à la base de données.
+			</li>
+			<br>
+			<hr>
+			<br>
+			<li>
+				<h5>URL: <a href="https://hakimyouvarss22.cleverapps.io/rss22/delete/{guid}">https://hakimyouvarss22.cleverapps.io/rss22/delete/{guid}</a></h5>
+				Méthode: DELETE	<br>
+				Résumé: Suppression de l'article dont l'identifiant est {guid}.
+			</li>
+			<br>
+			<hr>
+			<br>
 			</ul>
-		</fieldset>
+					</fieldset>
+			
 	</body>
 </html>
