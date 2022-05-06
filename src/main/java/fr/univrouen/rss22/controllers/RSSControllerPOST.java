@@ -26,7 +26,7 @@ import fr.univrouen.rss22.repository.FeedRepository;
 import fr.univrouen.rss22.repository.ItemRepository;
 
 @Controller
-public class PostControllers {
+public class RSSControllerPOST {
 	@Autowired
 	ItemRepository ir;
 	@Autowired
