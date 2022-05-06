@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-	<head>
-	
-		<meta charset="UTF-8">
-		<title>Help - Rss22-SB1  </title>
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Detail - Rss22-SB1</title> 
+
+
 <link rel="stylesheet" href=
 "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src=
@@ -14,11 +14,13 @@
     </script>
     <script src=
 "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
-    </script>
-    	<style>
-    	
+    </script>	<style>
+	
+	
+
 	.hoverable{
   display:inline-block;
+  backface-visibility: hidden;
   vertical-align: middle;
   position:relative;
   box-shadow: 0 0 1px rgba(0,0,0,0);
@@ -95,20 +97,14 @@
 /*everything below here is just setting up the page, so dont worry about it */
 
 
-@media (min-width: 768px) {
-  .navbar{
-    text-align: center !important;
-    float: none;
-    display: inline-block;
-  }
-}
+
 
 nav {
   background: none !important;
   text-transform:uppercase;
  
 }
-fieldset{
+.centrer{
 	font-weight:600;
   	text-align:center !important;
   }
@@ -125,7 +121,8 @@ background-color: black ;
 	
 	</style>
 	</head>
-	<body>
+<body>
+
 <nav class="navbar navbar-expand bg-black">
   
         <ul class="navbar-nav">
@@ -146,50 +143,38 @@ background-color: black ;
             </li>
         </ul>
     </nav>
-<fieldset>
-			<legend>Opérations disponibles :</legend>
-			<ul>
-			<li>
-				<h4>URL: https://hakim.cleverapps.io/</h4>
-				Méthode: GET	<br>
-				Résumé: Renvoie la page d'acceuil du projet en format HTML
-			</li>
-			<br>
-			<hr>
-			<br>
-			
-			<li>
-				<h4>URL: https://hakim.cleverapps.io/help	</h4>
-				Méthode: GET	<br>
-				Résumé: Renvoie une page listant toute les opérations disponibles en format HTML
-			</li>
-			<br>
-			<hr>
-			
-			<br>
-			
-			
-			<li>
-				<h4>URL: https://hakim.cleverapps.io/rss22/resume/xml	</h4>
-				Méthode: GET	<br>
-				Résumé: Affiche la liste des articles stockés en format XML.
-			</li>
-			<br>
-			<hr>
-			
-			<br>
-			
-			
-			<li>
-				<h4>URL: https://hakim.cleverapps.io/rss22/resume/html</h4>
-				Méthode: GET	<br>
-				Résumé: Affiche la liste des articles stockés en format HTML.
-			</li>
-			<br>
-			<hr>
-			<br>
-			
-			</ul>
-		</fieldset>
-	</body>
+		
+	
+	
+	<div class="container">
+	<h1 class="text-center">
+	
+	Details de l'article</h1>
+    <table class="table">
+    	<tr>
+    		<th scope="col">Guid</th>
+	        <td th:utext="${item.guid}"></td>
+    	</tr>
+    	<tr>
+    		<th scope="col">Titre</th>
+	        <td th:utext="${item.title}"></td>
+    	</tr>
+    	<tr>
+    		<th scope="col">Date</th>
+	        <td th:utext="${item.published}"></td>
+    	</tr>
+    	<tr>
+    		<th scope="col">Categorie</th>
+	        <td th:utext="${item.category}"></td>
+    	</tr>
+    	<tr>
+    		<th scope="col">Contenu</th>
+	        <td th:utext="${item.content}"></td>
+    	</tr>
+    	
+	</table>
+	
+	
+	</div>
+</body>
 </html>

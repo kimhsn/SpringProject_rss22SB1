@@ -1,0 +1,105 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:element name="title" type="textType"/>
+<xs:element name="pubDate" type="xs:date"/>
+<xs:element name="copyright" type="textType"/>
+<xs:element name="link" type="linkType"/>
+<xs:element name="guid" type="urlType"/>
+<xs:element name="category" type="categoryType"/>
+<xs:element name="published" type="xs:date"/>
+<xs:element name="updated" type="xs:date"/>
+<xs:element name="image" type="imageType"/>
+<xs:element name="content" type="contentType"/>
+<xs:element name="author" type="authorContributorType"/>
+<xs:element name="contributor" type="authorContributorType"/>
+<xs:element name="name" type="nameType"/>
+<xs:element name="email" type="emailType"/>
+<xs:element name="uri" type="urlType"/>
+<xs:element name="url" type="urlType"/>
+<xs:element name="feed" type="feedType"/>
+<xs:element name="item" type="itemType"/>
+<xs:complexType name="feedType">
+<xs:sequence>
+<xs:element ref="title" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="pubDate" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="copyright" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="link" minOccurs="1" maxOccurs="unbounded"/>
+<xs:element ref="item" minOccurs="1" maxOccurs="10"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="textType">
+<xs:restriction base="xs:string">
+<xs:maxLength value="128"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="urlType">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="relType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="self"/>
+<xs:enumeration value="alternate"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="typemime">
+<xs:restriction base="xs:string"/>
+</xs:simpleType>
+<xs:simpleType name="imageExType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="gif"/>
+<xs:enumeration value="jpeg"/>
+<xs:enumeration value="png"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="nameType">
+<xs:restriction base="xs:string">
+<xs:maxLength value="64"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="emailType">
+<xs:restriction base="xs:string">
+</xs:restriction>
+</xs:simpleType>
+<xs:complexType name="linkType">
+<xs:attribute name="rel" type="relType"/>
+<xs:attribute name="type" type="typemime"/>
+<xs:attribute name="href" type="urlType"/>
+</xs:complexType>
+<xs:complexType name="categoryType">
+<xs:attribute name="term" type="xs:string"/>
+</xs:complexType>
+<xs:complexType name="imageType">
+<xs:attribute name="type" type="imageExType"/>
+<xs:attribute name="href" type="urlType"/>
+<xs:attribute name="alt" type="xs:string"/>
+<xs:attribute name="length" type="xs:integer" use="optional"/>
+</xs:complexType>
+<xs:complexType name="contentType">
+<xs:attribute name="text" type="xs:string"/>
+<xs:attribute name="href" type="urlType"/>
+</xs:complexType>
+<xs:complexType name="authorContributorType">
+<xs:all>
+<xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="uri" minOccurs="0" maxOccurs="1"/>
+<xs:element ref="email" minOccurs="0" maxOccurs="1"/>
+</xs:all>
+</xs:complexType>
+<xs:complexType name="itemType">
+<xs:sequence>
+<xs:element ref="guid" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="title" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="category" minOccurs="1" maxOccurs="unbounded"/>
+<xs:choice>
+<xs:element ref="published" minOccurs="1" maxOccurs="1"/>
+<xs:element ref="updated" minOccurs="1" maxOccurs="1"/>
+</xs:choice>
+<xs:element ref="image" minOccurs="0" maxOccurs="1"/>
+<xs:element ref="content" minOccurs="1" maxOccurs="1"/>
+<xs:choice>
+<xs:element ref="author" minOccurs="1" maxOccurs="unbounded"/>
+<xs:element ref="contributor" minOccurs="1" maxOccurs="unbounded"/>
+</xs:choice>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
